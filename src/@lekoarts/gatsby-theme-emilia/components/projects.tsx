@@ -61,7 +61,7 @@ const Projects = ({projects}: Props) => {
                             gridGap: 4,
                             gridTemplateColumns: [`1fr`, `repeat(auto-fill, minmax(350px, 1fr))`],
                             alignItems: `flex-start`,
-                            mt: `-8rem`
+                            mt: `-4rem`
                         }}>
                         {projects.map((project, index) => {
                             const val = project.cover.childImageSharp.gatsbyImageData.backgroundColor as string
