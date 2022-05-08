@@ -7,20 +7,26 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-emilia-core/gatsby-config.js
-    siteTitle: `Emilia`,
-    siteTitleAlt: `Emilia - Gatsby Starter Portfolio`,
+    siteTitle: `鱼鱼@魔法觉醒`,
+    siteTitleAlt: `鱼鱼爱学习 - 哈利波特·魔法觉醒`,
     siteHeadline: `Emilia - Gatsby Theme from @lekoarts`,
-    siteUrl: `https://emilia.lekoarts.de`,
-    siteDescription: `Minimalistic portfolio/photography site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.`,
+    siteUrl: `https://hp.yujinyan.me`,
+    siteDescription: `《哈利波特·魔法觉醒》拍照打卡`,
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
-    author: `@lekoarts_de`,
+    author: `@yujinyan1992`,
   },
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-emilia`,
       // See the theme's README for all available options
-      options: {},
+      options: {
+        name: "鱼鱼爱学习",
+        socialMedia: [],
+        formatString: "YYYY-MM-DD",
+        showThemeAuthor: false,
+        location: "Hufflepuff"
+      },
     },
     `gatsby-plugin-sitemap`,
     {
