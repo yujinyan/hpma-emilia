@@ -2,11 +2,12 @@
 import {jsx, Heading, Flex} from "theme-ui"
 import {animated, useSpring, config} from "react-spring"
 import {useStaticQuery, graphql} from "gatsby"
-import {GatsbyImage, IGatsbyImageData} from "gatsby-plugin-image"
+import {StaticImage, GatsbyImage, IGatsbyImageData} from "gatsby-plugin-image"
 import useEmiliaConfig from "@lekoarts/gatsby-theme-emilia/src/hooks/use-emilia-config"
 import HeaderBackground from "@lekoarts/gatsby-theme-emilia/src/components/header-background"
 import Location from "@lekoarts/gatsby-theme-emilia/src/assets/location"
 import SocialMediaList from "@lekoarts/gatsby-theme-emilia/src/components/social-media-list"
+import avt from "./avatar.png"
 
 type AvatarStaticQuery = {
     file: {
@@ -22,7 +23,10 @@ const Header = () => {
     query {
       file(name: { eq: "avatar" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 160, height: 160, quality: 100)
+          gatsbyImageData(
+            layout: FIXED, width: 160, height: 160, 
+            placeholder: NONE
+            quality: 100)
         }
       }
     }
@@ -62,7 +66,6 @@ const Header = () => {
                 >
                     {avatar?.file?.childImageSharp?.gatsbyImageData ? (
                         <GatsbyImage
-                            loading="eager"
                             image={avatar.file.childImageSharp.gatsbyImageData}
                             alt="Avatar"/>
                     ) : (
@@ -70,9 +73,13 @@ const Header = () => {
                     )}
                 </div>
                 <animated.div style={fadeUpProps}>
-                    <Heading as="h1" variant="styles.h1" sx={{color: "white"}}>
-                        {name}
-                    </Heading>
+                    <StaticImage
+                        loading="eager"
+                        placeholder="none"
+                        src="../assets/name.png" alt="鱼鱼爱学习" height="32"/>
+                    {/*<Heading as="h1" variant="styles.h1" sx={{color: "white"}}>*/}
+                    {/*    {name}*/}
+                    {/*</Heading>*/}
                 </animated.div>
                 {/*<animated.div style={fadeUpPropsDelay}>*/}
                 {/*    <Flex*/}
